@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Parkio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FFA500; /* Laranja */
+            color: white; /* Preto */
+            text-align: center;
+            background-image: url('fundo.png');
+        }
+
+        form {
+            max-width: 400px;
+            min-height: 707px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #FFA500; /* Laranja */
+            border-radius: 10px;
+            border: 2px solid #FFA500; /* Borda preta */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Preto com transparência */
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 10px;
+            color:white; /* Preto */
+            font-size: 16px;
+            text-align: left;
+        }
+
+        form input[type="text"],
+        form input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #000000; /* Preto */
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        form button {
+            background-color: #383bec; /* Preto */
+            color: #FFFFFF; /* Branco */
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        form button:hover {
+            background-color: #FFA500; /* Laranja ao passar o mouse */
+        }
+
+        .welcome {
+            margin-top: 30px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <form id="loginForm">
+        <h2>Login</h2>
+        <label for="email">E-mail:</label>
+        <input type="text" id="email" name="email" required>
+
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha" required>
+
+        <button type="submit">Entrar</button>
+    </form>
+
+    <div class="welcome" id="welcomeMsg" style="display: none;">
+        Bem-vindo, <span id="userName"></span>!
+    </div>
+
+    <script>
+        const loginForm = document.getElementById('loginForm');
+        const welcomeMsg = document.getElementById('welcomeMsg');
+        const userName = document.getElementById('userName');
+
+        loginForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Simula um login bem-sucedido
+            const email = loginForm.email.value;
+            const password = loginForm.senha.value;
+
+            // Verifica se o email e a senha estão preenchidos
+            if (email && password) {
+                // Exibe a mensagem de boas-vindas e o nome do usuário
+                welcomeMsg.style.display = 'block';
+                userName.textContent = email.split('@')[0]; // Extrai o nome de usuário do email
+
+                // Limpa os campos do formulário
+                loginForm.reset();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cadastro - Parkio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FFA500; /* Laranja */
+            color: #FFFFFF; /* Branco */
+            
+            background-image: url('fundo.png');
+            background-repeat: no-repeat;
+           
+        }
+
+        form {
+            max-width: 400px;
+            min-height: 707px;
+            margin: 50px auto;
+            padding: 48px 68px;
+            /* Branco */
+            border-radius: 16px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Preto com transparência */
+            position: relative; /* Para posicionar os botões */
+           
+
+        }
+
+        form h2 {
+            color: white; /* Laranja */
+           
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 10px;
+            color: white; /* Laranja */
+            font-size: 16px;
+            text-align: left;
+            
+        }
+
+        form input[type="text"],
+        form input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #FFA500; /* Laranja */
+            border-radius: 5px;
+            font-size: 16px;
+            color: rgb(0, 0, 0); /* Laranja */
+            filter: alpha(opacity=70);
+        opacity: 0.7;
+        -moz-opacity: 0.7;
+        -webkit-opacity: 0.7;
+            
+        }
+
+
+        .form input{
+             color: white;
+        }
+
+        form button {
+            background-color: #383bec; /* Laranja */
+            color: #FFFFFF; /* Branco */
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            margin-right: 10px; /* Adiciona margem à direita para separar os botões */
+        }
+
+        form button#voltarBtn {
+            background-color: #383bec; /* Laranja */
+            color: #FFFFFF; /* Branco */
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        form button:hover {
+            background-color: #FFFFFF; /* Branco ao passar o mouse */
+            color: #FFA500; /* Laranja ao passar o mouse */
+        }
+
+        .mensagem {
+            display: none;
+            margin-top: 20px;
+            color: white; /* Laranja */
+            font-size: 18px;
+            justify-content: center;
+            left: 100px;
+        }
+    </style>
+</head>
+<body>
+    <form id="cadastroForm">
+        
+        <h2>Cadastro</h2>
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="email">E-mail:</label>
+        <input type="text" id="email" name="email" required>
+
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha" required>
+
+        <button type="submit" id="cadastrarBtn" onclick="cadastrarUsuario()">Cadastrar</button>
+
+        <a href="parteinicial.html"></a> <button type="button" id="voltarBtn" onclick="window.history.back()">Voltar</button>
+        <div class="mensagem" id="mensagemCadastro">
+        Usuário cadastrado com sucesso!
+    </div>
+    </form>
+
+    
+    <script>
+        function cadastrarUsuario() {
+            const mensagemCadastro = document.getElementById('mensagemCadastro');
+            mensagemCadastro.style.display = 'block'; // Exibe a mensagem
+    
+            // Esconde a mensagem após alguns segundos
+            setTimeout(function() {
+                mensagemCadastro.style.display = 'none';
+            }, 3000); // Tempo em milissegundos (3 segundos)
+    
+            const cadastroForm = document.getElementById('cadastroForm');
+            cadastroForm.reset(); // Limpa o formulário após o cadastro
+        }
+    </script>
+
+
+</body>
+</html>

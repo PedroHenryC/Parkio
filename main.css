@@ -1,0 +1,79 @@
+.header {
+    background-color: #FFA500; /* laranja */
+    color: #ffffff; /* amarelo */
+    padding: 20px;
+    text-align: center;
+}
+
+.nav-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex; /* Mudança para flexbox */
+    justify-content: flex-end; /* Alterado para alinhar à direita */
+}
+
+.nav-list li {
+    margin-right: 20px;
+}
+
+.nav-list li a {
+    color: black;
+    text-decoration: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+section h2 {
+    color: #FFA500; /* laranja */
+    margin-bottom: 20px;
+}
+
+section p {
+    color: #333; /* cinza escuro */
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+form label {
+    display: block;
+    margin-bottom: 10px;
+    color: #FFA500; /* laranja */
+    font-size: 16px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+form button {
+    background-color: #FFA500; /* laranja */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.footer {
+    background-color: #FFA500; /* laranja */
+    color: #ffffff; /* amarelo */
+    padding: 20px;
+    text-align: center;
+}
